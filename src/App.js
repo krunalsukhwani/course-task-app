@@ -1,15 +1,12 @@
 import React from "react";
 import "./App.css";
+import TaskList from "./Components/TaskList/TaskList";
 
 const App = () => {
   return (
     <div className="course-tasks">
       <h2>Course Task</h2>
-      <ul className="task-list">
-        <li>Create React Application</li>
-        <li>Install Required Softwares</li>
-        <li>Complete the assignment</li>
-      </ul>
+      <TaskList />
     </div>
   );
 };
