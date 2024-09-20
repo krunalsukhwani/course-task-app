@@ -12,12 +12,18 @@ const App = () => {
     {id:"task4", text:"Prepare the quiz questions"},
   ];
 
+  //function to handle new task : add new task into the array (courseTasks)
+  const addNewTaskHandler = (newTask) => {
+    courseTasks.push(newTask);
+    console.log(courseTasks);
+  };
+
   return (
     <div className="course-tasks">
       <h2>Course Task</h2>
       
       {/* add new component : NewTask */}
-      <NewTask />
+      <NewTask onAddTask={addNewTaskHandler}/>
 
       {/* props (tasks) holds the array of courseTasks */}
       <TaskList tasks={courseTasks}/>

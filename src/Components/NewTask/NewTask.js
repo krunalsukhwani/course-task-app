@@ -1,7 +1,7 @@
 import React from "react";
 import './NewTask.css';
 
-const NewTask = () => {
+const NewTask = props => {
 
     const addTaskHandler = event => {
         event.preventDefault();
@@ -11,7 +11,7 @@ const NewTask = () => {
             text: 'My New Task!'
         };
 
-        console.log(newTask);
+        props.onAddTask(newTask);
     };
 
     return (
