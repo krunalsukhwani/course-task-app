@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.css";
 import TaskList from "./Components/TaskList/TaskList";
+import NewTask from "./Components/NewTask/NewTask";
 
 const App = () => {
 
@@ -14,6 +15,10 @@ const App = () => {
   return (
     <div className="course-tasks">
       <h2>Course Task</h2>
+      
+      {/* add new component : NewTask */}
+      <NewTask />
+
       {/* props (tasks) holds the array of courseTasks */}
       <TaskList tasks={courseTasks}/>
     </div>
