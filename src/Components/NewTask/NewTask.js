@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import './NewTask.css';
 
 const NewTask = props => {
 
-    let enteredText = '';
+    const [enteredText, setEnteredText] = useState('');
 
     const addTaskHandler = event => {
         event.preventDefault();
@@ -13,16 +13,18 @@ const NewTask = props => {
             text: enteredText
         };
 
+        setEnteredText('');
+
         props.onAddTask(newTask);
     };
 
     const textChangeHandler = event => {
-        enteredText = event.target.value;
+        setEnteredText(event.target.value);
     };
 
     return (
         <form className="new-task" onSubmit={addTaskHandler}>
-            <input type="text" onChange={textChangeHandler}/>
+            <input type="text" value={enteredText} onChange={textChangeHandler}/>
             <button type="submit">Add Task</button>
         </form>
     );
